@@ -9,12 +9,11 @@
         Title="MainWindow" Height="850" Width="1250">
     <Grid>
         <Button/>
-        <lvc:PieChart Name="DGenders" Series="{Binding PieMemberGenders}" Margin="0,10,995,580"/>
+        <lvc:PieChart Name="DGenders" Margin="0,10,995,580"/>
         <lvc:CartesianChart Name="DWorkOut" Margin="251,10,498,580"/>
         <lvc:CartesianChart Name="DWorkOutFrequency" Margin="752,10,10,580" Series="{Binding PieMemberGenders}" />
         <lvc:CartesianChart Name="DExperienceLevel" Margin="10,259,749,298" Series="{Binding PieMemberGenders}" />
         <lvc:CartesianChart Name="DWeight" Margin="501,259,221,298" Series="{Binding PieMemberGenders}" />
         <lvc:PieChart x:Name="DSessionDuration" Series="{Binding PieMemberGenders}" Margin="1034,254,10,370"/>
-
     </Grid>
 </Window>

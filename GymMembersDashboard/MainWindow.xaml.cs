@@ -1,4 +1,7 @@
 ﻿using System.Windows;
+using LiveCharts;
+using LiveCharts.Definitions.Series;
+using LiveCharts.Wpf;
 using LiveChartsCore;
 using LiveChartsCore.SkiaSharpView;
 
@@ -17,10 +20,11 @@ namespace GymMembersDashboard
         public void SetUpCharts()
         {
             var import = new ImportMembers();
-            var members = import.GetMembers(); 
+            var members = import.GetMembers();
             var analyzer = new AnalyzerMembers(members);
             var preparation = new PreparationMembers(analyzer);
             DGenders.Series = preparation.GetGenders();
+            DWorkOut.Series = preparation.GetWorkOuts();
         }
     }
 }
