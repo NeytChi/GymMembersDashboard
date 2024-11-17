@@ -1,41 +1,12 @@
 ﻿using OfficeOpenXml;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using OfficeOpenXml;
-using OfficeOpenXml.Table;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Windows.Documents;
 
 namespace GymMembersDashboard
 {
     internal class ImportMembers
     {
         public ImportMembers() { }
-        
-        public List<MemberTrack> ImportData(string filePath) 
-        {
-            var data = new List<MemberTrack>(); 
-            using (var package = new ExcelPackage(new FileInfo(filePath))) 
-            { 
-                var worksheet = package.Workbook.Worksheets.First(); 
-                var table = worksheet.Tables["gmet"]; 
-                if (table == null) 
-                { 
-                    throw new InvalidOperationException($"Table gmet not found."); 
-                } 
-                
-            }
-            return data;
-        }
         public ICollection<MemberTrack> GetMembers()
         {
             //  Шлях до файл з даними

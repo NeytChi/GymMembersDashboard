@@ -1,6 +1,6 @@
 ﻿namespace GymMembersDashboard
 {
-    internal class MemberTrack
+    public class MemberTrack
     {
         [ExcelColumn("Age")]
         public double Age { get; set; }

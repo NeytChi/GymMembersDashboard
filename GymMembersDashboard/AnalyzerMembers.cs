@@ -3,7 +3,7 @@
     /// <summary>
     /// Інсайти з аналізу даних MemberTracks з таблиці.
     /// </summary>
-    internal class AnalyzerMembers
+    public class AnalyzerMembers
     {
         public ICollection<MemberTrack> Members { get; set; }
         public AnalyzerMembers(ICollection<MemberTrack> members)
@@ -75,18 +75,18 @@
                     From = s.Key - 10,
                     To = s.Key,
                     Count = s.Count()
-                }).ToArray();
+                }).OrderBy(o => o.From).ToArray();
         }
         /// Session_Duration (hours) Distribution
         public IEnumerable<SessionHours> GetSessionHours()
         {
-            return Members.GroupBy(g => ((int)(g.SessionDuration * 100) / 10) / 10).Select(s =>
+            return Members.GroupBy(g => g.SessionDuration).Select(s =>
                 new SessionHours
                 {
-                    From = s.Key - 10,
+                    From = s.Key,
                     To = s.Key,
                     Count = s.Count()
-                }).ToArray();
+                }).OrderBy(o => o.From).ToArray();
         }
         /// Calories_Burned Distribution
         public IEnumerable<WeightCount> GetCaloriesBurned()
@@ -97,7 +97,7 @@
                     From = s.Key - 100,
                     To = s.Key,
                     Count = s.Count()
-                }).ToArray();
+                }).OrderBy(o => o.From).ToArray();
         }
         /// Age Distribution
         public IEnumerable<DistributionDoubleCount> GetAges()
@@ -107,7 +107,7 @@
                 {
                     Key = s.Key,
                     Count = s.Count()
-                }).ToArray();
+                }).OrderBy(o => o.Key).ToArray();
         }
         /// Height (m) Distribution
         public IEnumerable<WeightCount> GetHeights()
@@ -174,6 +174,16 @@
                     To = s.Key,
                     Count = s.Count()
                 }).ToArray();
+        }
+        /// Body Mass Index Distribution
+        public IEnumerable<DistributionDoubleCount> GetBMIs()
+        {
+            return Members.GroupBy(g => ((int)g.BMI / 10) * 10)
+                .Select(s => new DistributionDoubleCount
+                {
+                    Key = s.Key,
+                    Count = s.Count()
+                }).OrderBy(o => o.Key).ToArray();
         }
     }
 }
