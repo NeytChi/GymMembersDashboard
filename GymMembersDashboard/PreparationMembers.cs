@@ -1,9 +1,6 @@
-﻿using LiveCharts;
+﻿using GymMembersDashboard.Units;
+using LiveCharts;
 using LiveCharts.Wpf;
-using LiveChartsCore.SkiaSharpView.Painting;
-using SkiaSharp;
-using System.Drawing;
-using System.Windows.Media;
 
 namespace GymMembersDashboard
 {
@@ -120,7 +117,7 @@ namespace GymMembersDashboard
             }
             return seriesBMIs;
         }
-        public ColumnSeries GetColumnKeyValue(DistributionDoubleCount d)
+        public ColumnSeries GetColumnKeyValue(Unit<double> d)
         {
             return new ColumnSeries
             {
@@ -128,7 +125,7 @@ namespace GymMembersDashboard
                 Values = new ChartValues<int> { d.Count }
             };
         }
-        public ColumnSeries GetColumnKeyValue(DistributionIntCount d)
+        public ColumnSeries GetColumnKeyValue(Unit<int> d)
         {
             return new ColumnSeries
             {
@@ -136,7 +133,7 @@ namespace GymMembersDashboard
                 Values = new ChartValues<int> { d.Count }
             };
         }
-        public ColumnSeries GetColumnFromToCount(WeightCount d)
+        public ColumnSeries GetColumnFromToCount(UnitRange<double> d)
         {
             return new ColumnSeries
             {

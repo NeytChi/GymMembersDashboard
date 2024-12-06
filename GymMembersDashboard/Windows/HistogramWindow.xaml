@@ -6,11 +6,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GymMembersDashboard"
         mc:Ignorable="d"
-        Title="HistogramWindow" Height="600" Width="1024">
+        Title="HistogramWindow" Height="400" Width="800">
     <Grid>
-        <lvc:CartesianChart x:Name="AgeChart" Margin="10,10,512,292"/>
-        <lvc:CartesianChart x:Name="BMIChart" Margin="512,10,10,292"/>
-        <lvc:CartesianChart x:Name="CaloriesChart" Margin="10,292,512,10"/>
-        <lvc:CartesianChart x:Name="SessionDurationChart" Margin="517,292,5,10"/>
+        <lvc:CartesianChart x:Name="AgeChart" Margin="0,0,395,192"/>
+        <lvc:CartesianChart x:Name="BMIChart" Margin="405,0,10,192"/>
+        <lvc:CartesianChart x:Name="CaloriesChart" Margin="10,192,400,10"/>
+        <lvc:CartesianChart x:Name="SessionDurationChart" Margin="400,192,10,10"/>
     </Grid>
 </Window>

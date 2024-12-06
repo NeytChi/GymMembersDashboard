@@ -1,4 +1,4 @@
-﻿namespace GymMembersDashboard
+﻿namespace GymMembersDashboard.Core
 {
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
     public class ExcelColumnAttribute : Attribute

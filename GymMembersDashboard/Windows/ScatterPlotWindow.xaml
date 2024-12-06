@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GymMembersDashboard"
         mc:Ignorable="d"
-        Title="ScatterPlotWindow" Height="450" Width="1000">
+        Title="ScatterPlotWindow" Height="400" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="527*"/>
@@ -14,7 +14,7 @@
             <ColumnDefinition Width="28*"/>
             <ColumnDefinition Width="365*"/>
         </Grid.ColumnDefinitions>
-        <lvc:CartesianChart Name="BMICalories" Series="{Binding Series}" Margin="0,0,27,0"></lvc:CartesianChart>
-        <lvc:CartesianChart Name="SessionDurationCalories" Series="{Binding Series}" Margin="500,0,0,0" Grid.ColumnSpan="4"></lvc:CartesianChart>
+        <lvc:CartesianChart Name="BMICalories" Series="{Binding Series}" Margin="0,0,22,0"/>
+        <lvc:CartesianChart Name="SessionDurationCalories" Series="{Binding Series}" Margin="405,0,10,0" Grid.ColumnSpan="4"/>
     </Grid>
 </Window>

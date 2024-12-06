@@ -1,4 +1,4 @@
-﻿namespace GymMembersDashboard
+﻿namespace GymMembersDashboard.Core
 {
     public class MemberTrack
     {

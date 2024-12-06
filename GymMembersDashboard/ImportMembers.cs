@@ -1,4 +1,5 @@
-﻿using OfficeOpenXml;
+﻿using GymMembersDashboard.Core;
+using OfficeOpenXml;
 using System.IO;
 using System.Reflection;
 
